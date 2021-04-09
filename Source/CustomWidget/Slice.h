@@ -28,7 +28,7 @@ public:
 	virtual const FText GetPaletteCategory() override;
 #endif
 	
-	protected:
+protected:
 	virtual TSharedRef<SWidget> RebuildWidget() override;
 	TSharedPtr<SSlateSlice> MySlice;
 };

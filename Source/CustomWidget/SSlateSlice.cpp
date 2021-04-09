@@ -5,8 +5,10 @@ BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 void SSlateSlice::Construct(const FArguments& InArgs)
 {
 	Brush = FInvalidatableBrushAttribute(InArgs._Brush);
+	Angle = InArgs._Angle;
 	ArcSize = InArgs._ArcSize;
 }
+END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
 int32 SSlateSlice::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeometry, const FSlateRect& MyCullingRect,
 	FSlateWindowElementList& OutDrawElements, int32 LayerId, const FWidgetStyle& InWidgetStyle,
@@ -43,8 +45,7 @@ int32 SSlateSlice::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeom
 		FSlateVertex& OuterVert = Vertices.Last();
 
 		OuterVert.Position = Center + OuterEdge;
-		OuterVert.Color = FinalColorAndOpacity;
-		
+		OuterVert.Color = FinalColorAndOpacity;	
 	}
 
 	TArray<SlateIndex> Indices;
@@ -84,4 +85,3 @@ void SSlateSlice::SetArcSize(float InArcSize)
 	ArcSize = InArcSize;
 }
 
-END_SLATE_FUNCTION_BUILD_OPTIMIZATION
