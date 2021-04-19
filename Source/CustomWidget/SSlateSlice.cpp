@@ -49,7 +49,7 @@ int32 SSlateSlice::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeom
 	}
 
 	TArray<SlateIndex> Indices;
-	for (int i = 0; i < NumSegments; ++i)
+	for (int i = 0; i <= NumSegments; ++i)
 	{
 		Indices.Add(0);
 		Indices.Add(i);

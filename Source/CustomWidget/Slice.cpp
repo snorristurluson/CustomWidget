@@ -15,6 +15,24 @@ void USlice::ReleaseSlateResources(bool bReleaseChildren)
 	MySlice.Reset();
 }
 
+void USlice::SetAngle(float InAngle)
+{
+	Angle = InAngle;
+	if (MySlice)
+	{
+		MySlice->SetAngle(Angle);
+	}
+}
+
+void USlice::SetArcSize(float InArcSize)
+{
+	ArcSize = InArcSize;
+	if (MySlice)
+	{
+		MySlice->SetArcSize(ArcSize);
+	}
+}
+
 #if WITH_EDITOR
 const FText USlice::GetPaletteCategory()
 {
